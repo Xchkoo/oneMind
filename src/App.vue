@@ -56,10 +56,12 @@
             v-model="selectedItem"
             color="primary"
           >
-            <v-list-item
+          <router-link 
               v-for="(item, i) in items"
               :key="i"
-            >
+              :to="item.url"
+              >
+            <v-list-item class="md-5">
               <v-list-item-icon>
                 <v-icon v-text="item.icon"></v-icon>
               </v-list-item-icon>
@@ -67,10 +69,10 @@
                 <v-list-item-title v-text="item.text"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+          </router-link>
           </v-list-item-group>
         </v-list>
       </v-sheet>         
-      <router-link to="/">[跳转到主页]</router-link>
     </v-navigation-drawer>
 
 
@@ -105,10 +107,16 @@ export default {
   data: () => ({
     selectedItem: 1,
       items: [
-        { text: '主页 - OneMind', icon: 'mdi-home-variant-outline', url: '/Home'},
+        { text: '主页 - Home', icon: 'mdi-home-variant-outline', url: '/Home'},
         { text: '写下 - Idea', icon: 'mdi-lightbulb-on', url: '/Idea'},
         { text: '分享 - Share', icon: 'mdi-share-variant', url: '/Share'},
       ],
   }),
 };
 </script>
+
+<style>
+  a:link{
+    text-decoration: none;
+  }
+</style>
