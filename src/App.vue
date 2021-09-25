@@ -75,8 +75,6 @@
       </v-sheet>         
     </v-navigation-drawer>
 
-
-
     <v-main>
       <v-sheet
       class="mx-auto"
@@ -100,7 +98,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
@@ -111,7 +108,7 @@ export default {
         { text: '写下 - Idea', icon: 'mdi-lightbulb-on', url: '/Idea'},
         { text: '分享 - Share', icon: 'mdi-share-variant', url: '/Share'},
       ],
-  }),
+  })
 };
 </script>
 
